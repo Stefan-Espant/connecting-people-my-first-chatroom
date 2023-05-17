@@ -5,6 +5,7 @@ import * as path from 'path'
 import { Server } from 'socket.io'
 import { createServer } from 'http'
 import express from 'express'
+import socketAntiSpam from 'socket-anti-spam'
 
 const app = express()
 const http = createServer(app)
@@ -59,6 +60,7 @@ io.on('connection', (socket) => {
     console.log('user disconnected')
   })
 })
+
 
 // Start een http server op het ingestelde poortnummer en log de url
 http.listen(port, () => {
